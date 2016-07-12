@@ -63,6 +63,7 @@
               });
             s.stickyElement.parent().removeClass(s.className);
             s.stickyElement.trigger('sticky-end', [s]);
+            s.stickyWrapper.css('height', s.stickyElement.outerHeight());
             s.currentTop = null;
           }
         }
@@ -106,6 +107,7 @@
               s.stickyElement.trigger('sticky-bottom-unreached', [s]);
             }
 
+            s.stickyWrapper.css('height', s.stickyElement.outerHeight());
             s.currentTop = newTop;
           }
         }
@@ -127,6 +129,7 @@
         if (newWidth != null) {
             s.stickyElement.css('width', newWidth);
         }
+        s.stickyWrapper.css('height', s.stickyElement.outerHeight());
       }
     },
     methods = {
